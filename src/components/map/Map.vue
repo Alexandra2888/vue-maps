@@ -11,8 +11,9 @@
 
 
 <template>
-  <GMapMap :center="center" :zoom="9" map-type-id="terrain" style="width: 100%; height: 100vh">
+  <GMapMap :center="center" :zoom="7" map-type-id="terrain" style="width: 100%; height: 100vh">
+    <GMapCluster>
     <GMapMarker :key="index" v-for="(marker, index) in markers" :position="marker"  :clickable="true"/>
+  </GMapCluster>
   </GMapMap>
-  <router-view></router-view>
 </template>
