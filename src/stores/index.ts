@@ -5,6 +5,9 @@ import axios from 'axios';
 interface MapPoint {
   lat: number;
   lng: number;
+  title:string;
+  address:string;
+  id:number;
 }
 
 export const useMapStore = defineStore('map', {
@@ -19,9 +22,12 @@ export const useMapStore = defineStore('map', {
         const mapsData = response.data.data;
 
         if (Array.isArray(mapsData)) {
-          this.markers = mapsData.map((item: { lat: string; lng: string }) => ({
+          this.markers = mapsData.map((item: { lat: string; lng: string, title:string; address:string; id:number }) => ({
             lat: parseFloat(item.lat),
             lng: parseFloat(item.lng),
+            title: item.title,
+            address:item.address,
+            id: item.id
           })) as MapPoint[];
           console.log("markers", this.markers);
         } else {
