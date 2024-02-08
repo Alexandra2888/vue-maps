@@ -8,11 +8,11 @@ interface MapPoint {
   title:string;
   address:string;
   id:number;
-}
+};
 
 export const useMapStore = defineStore('map', {
   state: () => ({
-    center: ref({ lat: 47.1585, lng: 27.6014 }),
+    center: ref({ lat: 47.151726, lng: 27.587914 }),
     markers: ref([] as MapPoint[]),
   }),
   actions: {
@@ -40,3 +40,6 @@ export const useMapStore = defineStore('map', {
     },
   },
 });
+
+
+
