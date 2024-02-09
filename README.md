@@ -30,9 +30,9 @@ npm run dev
 ## Screenshots
 ![map1](https://github.com/Alexandra2888/vue-maps/assets/76844097/89b95a82-63a8-4a59-a1a1-6758cdf9ac9f)
 
-![map2](https://github.com/Alexandra2888/vue-maps/assets/76844097/07edc368-99dc-42ab-9ca0-c8e8c68f42fc)
+![map2](https://github.com/Alexandra2888/vue-maps/assets/76844097/58992c59-1594-45d0-b012-83e97f65c5fe)
 
-![map3](https://github.com/Alexandra2888/vue-maps/assets/76844097/2a842e7e-d652-44d3-a659-7e9b422a9d2d)
+![map3](https://github.com/Alexandra2888/vue-maps/assets/76844097/f78b8b80-47e2-439f-81ce-d02c33560957)
 
 
 ## Video Demo
