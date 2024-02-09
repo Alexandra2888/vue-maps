@@ -10,10 +10,11 @@ Vue Maps is a Vue.js application for displaying maps using the Google Maps API. 
 
 ## Installation
 1. Clone the repository:
+```
 git clone https://github.com/Alexandra2888/vue-maps
+````
 
-
-2. Install dependencies:
+3. Install dependencies:
 ```
 cd vue-maps
 npm install
