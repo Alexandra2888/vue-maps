@@ -18,26 +18,18 @@ export const useMapStore = defineStore('map', {
   actions: {
     async fetchMaps() {
       try {
-        const response = await axios.get('https://stg-be.gocharge.tech:8443/api/pb/all-stations');
-        const mapsData = response.data.data;
-
-        if (Array.isArray(mapsData)) {
-          this.markers = mapsData.map((item: { lat: string; lng: string, title:string; address:string; id:number }) => ({
-            lat: parseFloat(item.lat),
-            lng: parseFloat(item.lng),
-            title: item.title,
-            address:item.address,
-            id: item.id
-          })) as MapPoint[];
-          console.log("markers", this.markers);
-        } else {
-          console.error('Invalid data format.');
-        }
+        const response = await axios.get('YOUR_API_ENDPOINT');
+        this.markers = response.data.data.map(item => ({
+          id: item.id,
+          lat: parseFloat(item.lat), // Ensure latitude is a number
+          lng: parseFloat(item.lng), // Ensure longitude is a number
+          title: item.title,
+          address: item.address
+        }));
       } catch (error) {
-        alert(error);
-        console.error(error);
+        console.error("Failed to fetch maps:", error);
       }
-    },
+    }
   },
 });
 
