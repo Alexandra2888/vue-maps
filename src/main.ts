@@ -12,11 +12,10 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-app
-  .use(VueGoogleMaps, {
-    load: {
-      key: import.meta.env.VITE_API_KEY,
-    },
-  })
+app.use(VueGoogleMaps, {
+  load: {
+    key: import.meta.env.VITE_API_KEY
+  }
+})
 
 app.mount('#app')

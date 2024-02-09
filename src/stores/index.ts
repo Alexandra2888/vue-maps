@@ -1,37 +1,35 @@
-import { ref } from 'vue';
-import { defineStore } from 'pinia';
-import axios from 'axios';
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { fetchMaps } from '@/services/mapService'
 
 interface MapPoint {
-  lat: number;
-  lng: number;
-  title:string;
-  address:string;
-  id:number;
-};
+  lat: number
+  lng: number
+  title: string
+  address: string
+  id: number
+}
 
 export const useMapStore = defineStore('map', {
   state: () => ({
     center: ref({ lat: 47.151726, lng: 27.587914 }),
-    markers: ref([] as MapPoint[]),
+    markers: ref([] as MapPoint[])
   }),
   actions: {
     async fetchMaps() {
       try {
-        const response = await axios.get('YOUR_API_ENDPOINT');
-        this.markers = response.data.data.map(item => ({
+        const apiMapPoints = await fetchMaps()
+        this.markers = apiMapPoints.map((item) => ({
           id: item.id,
-          lat: parseFloat(item.lat), // Ensure latitude is a number
-          lng: parseFloat(item.lng), // Ensure longitude is a number
+          lat: parseFloat(item.lat),
+          lng: parseFloat(item.lng),
           title: item.title,
           address: item.address
-        }));
+        }))
+        console.log('Maps fetched successfully:', this.markers)
       } catch (error) {
-        console.error("Failed to fetch maps:", error);
+        console.error('Failed to fetch maps:', error)
       }
     }
-  },
-});
-
-
-
+  }
+})

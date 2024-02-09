@@ -1,60 +1,55 @@
 <template>
- <div v-if="isVisible" class="modal">
-  <div class="modal-content">
-    <span class="close" @click="closeModal">&times;</span>
-    <h2>{{ title }}</h2>
-    <p>{{ address }}</p>
+  <div
+    v-if="isVisible"
+    class="fixed inset-0 bg-gray-600 bg-opacity-50 z-50 flex justify-center items-center text-black"
+  >
+    <div class="relative border w-fit h-fit shadow-lg rounded-md bg-white">
+      <div class="flex justify-end">
+        <button
+          @click="closeModal"
+          class="text-black bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm inline-block h-2 w-2 m-2"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="text-black flex items-center justify-center flex-col p-2">
+        <h2 class="text-sm font-semibold text-left">{{ title }}</h2>
+        <div class="flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="mr-1"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <p class="text-sm p-2 font-thin">{{ address }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
-
+import { defineProps } from 'vue'
 
 const props = defineProps({
   isVisible: Boolean,
   title: String,
-  address: String,
-});
+  address: String
+})
 
-const emit = defineEmits(['close']);
+const emit = defineEmits(['close'])
 
 const closeModal = () => {
-  emit('close');
-};
+  emit('close')
+}
 </script>
-
-<style>
-.modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>
