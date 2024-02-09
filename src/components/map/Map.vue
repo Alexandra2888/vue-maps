@@ -11,7 +11,7 @@ function onMarkerClick(marker: any) {
 }
 
 const isModalVisible = ref(false)
-const selectedMarker = ref({ title: '', address: '' })
+const selectedMarker = ref({ title: '', address: '', inventory: [] })
 
 onMounted(() => {
   fetchMaps()
@@ -33,6 +33,7 @@ onMounted(() => {
       :isVisible="isModalVisible"
       :title="selectedMarker.title"
       :address="selectedMarker.address"
+      :inventory="selectedMarker.inventory"
       @close="isModalVisible = false"
     />
   </GMapMap>

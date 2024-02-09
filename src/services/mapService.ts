@@ -6,6 +6,7 @@ interface ApiMapPoint {
   title: string
   address: string
   id: number
+  inventory: []
 }
 
 export async function fetchMaps(): Promise<ApiMapPoint[]> {

@@ -8,6 +8,7 @@ interface MapPoint {
   title: string
   address: string
   id: number
+  inventory: []
 }
 
 export const useMapStore = defineStore('map', {
@@ -24,7 +25,8 @@ export const useMapStore = defineStore('map', {
           lat: parseFloat(item.lat),
           lng: parseFloat(item.lng),
           title: item.title,
-          address: item.address
+          address: item.address,
+          inventory: item.inventory
         }))
         console.log('Maps fetched successfully:', this.markers)
       } catch (error) {
