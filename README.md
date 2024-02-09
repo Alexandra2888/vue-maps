@@ -37,8 +37,9 @@ npm run dev
 
 ## Video Demo
 
+https://github.com/Alexandra2888/vue-maps/assets/76844097/83c139c4-5e31-48d3-bcb1-572a1feb1095
 
-https://github.com/Alexandra2888/vue-maps/assets/76844097/18061b81-e470-4127-b24a-4ea83d597d0c
+
 
 
 
