@@ -31,7 +31,7 @@
         </div>
         <div class="bg-blue-950 text-white text-sm text-center p-3 my-2" v-else>
           <p>No available power banks at this moment</p>
-          <p class="py-1">€1/hhour - max €6/day</p>
+          <p class="py-1">€1/hour - max €6/day</p>
           <button class="bg-slate-100 text-blue-950 rounded-md py-1 px-16 m-3 hover:bg-blue-500" @click="closeModal">Close</button>
         </div>
       </div>
